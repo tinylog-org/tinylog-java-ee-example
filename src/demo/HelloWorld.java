@@ -23,7 +23,7 @@ public class HelloWorld extends HttpServlet {
 		LoggingContext.put("ip", request.getRemoteAddr());
 
 		Logger.info("Handle request");
-		response.getWriter().append("<h1>Hello World</h1><p>");
+		response.getWriter().append("<h1>Hello World</h1>");
 		Logger.info("Done request");
 	}
 
