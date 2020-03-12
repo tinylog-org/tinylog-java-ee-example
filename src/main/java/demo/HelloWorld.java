@@ -20,7 +20,7 @@ public class HelloWorld extends HttpServlet {
 		if (ip == null) {
 			ip = request.getRemoteAddr(); // Client IP is remote address
 		}
-		ThreadContext.put("ip", request.getRemoteAddr());
+		ThreadContext.put("ip", ip);
 
 		Logger.info("Handle request");
 		response.getWriter().append("<h1>Hello World</h1>");
