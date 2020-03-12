@@ -12,8 +12,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import org.h2.tools.RunScript;
-import org.pmw.tinylog.Configurator;
-import org.pmw.tinylog.Logger;
+import org.tinylog.Logger;
 
 @WebListener
 public class LifeCycleListener implements ServletContextListener {
@@ -36,8 +35,6 @@ public class LifeCycleListener implements ServletContextListener {
 	}
 
 	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-		Configurator.shutdownWritingThread(false);
-	}
+	public void contextDestroyed(ServletContextEvent event) { }
 
 }

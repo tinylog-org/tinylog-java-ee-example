@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.pmw.tinylog.Logger;
-import org.pmw.tinylog.LoggingContext;
+import org.tinylog.Logger;
+import org.tinylog.ThreadContext;
 
 @WebServlet("/")
 public class HelloWorld extends HttpServlet {
@@ -20,7 +20,7 @@ public class HelloWorld extends HttpServlet {
 		if (ip == null) {
 			ip = request.getRemoteAddr(); // Client IP is remote address
 		}
-		LoggingContext.put("ip", request.getRemoteAddr());
+		ThreadContext.put("ip", request.getRemoteAddr());
 
 		Logger.info("Handle request");
 		response.getWriter().append("<h1>Hello World</h1>");
